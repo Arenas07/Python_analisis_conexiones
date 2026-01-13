@@ -1,9 +1,9 @@
-casos = int(input("Ingrese la cantidad de casos de uso: "))
+casos = int(input())
 
 resultados = []
 
 for i in range(casos):
-    entrada = input(f"Ingrese el caso: ")
+    entrada = input()
     pares = entrada.split(";")
 
     diccionario = {}
