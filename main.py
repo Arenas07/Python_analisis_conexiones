@@ -9,11 +9,14 @@ for i in range(casos):
     diccionario = {}
 
     for par in pares:
-        clave = par.split(":")[0]
-        diccionario[clave] = 1
+        nodo = par.split(":")[0]
+        diccionario[nodo] = 0
 
     for par in pares:
         izquierda, derecha = par.split(":")
+
+        diccionario[izquierda] += len(derecha)
+
         for letra in derecha:
             if letra in diccionario:
                 diccionario[letra] += 1
