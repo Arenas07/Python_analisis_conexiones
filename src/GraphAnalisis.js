@@ -3,6 +3,10 @@ import { Node, Flow } from "pocketflow";
 class GraphNode extends Node {
 
     prep(shared) {
+        if (!Array.isArray(shared.entradas)){
+            throw new Error("La entrada no es un array")
+        }
+        
         for (const entrada of shared.entradas) {
             if (typeof entrada !== "string") {
                 throw new Error("Cada entrada debe ser un string");
@@ -16,6 +20,8 @@ class GraphNode extends Node {
         if (shared.entradas.length !== shared.casos) {
             throw new Error("El número de entradas no coincide con 'casos'");
         }
+
+        
         
 
         return {

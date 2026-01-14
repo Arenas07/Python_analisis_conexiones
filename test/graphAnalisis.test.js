@@ -62,6 +62,18 @@ describe("GraphNode (PocketFlow)", () => {
         );
     });
 
+    test("La entrada no es un array", async () => {
+        const flow = buildGraphFlow();
+
+        const shared = {
+            casos: 1,
+            entradas: 123
+        }
+
+        await expect(flow.run(shared)).rejects.toThrow(
+            "La entrada no es un array"
+        );
+    });
     
 })
 
